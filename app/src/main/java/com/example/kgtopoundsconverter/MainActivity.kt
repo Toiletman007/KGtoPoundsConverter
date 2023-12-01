@@ -15,9 +15,17 @@ class MainActivity : AppCompatActivity() {
         val btn: Button = findViewById(R.id.btn)
         val userOutputLBs: TextView = findViewById(R.id.poundsTextView)
 
-
+        btn.setOnClickListener(){
+            val kilos= userInputKG.text.toString().toDouble()
+            userOutputLBs.setText("Pounds: "+convertKgToPounds(kilos))
+        }
 
 
 
     }
+
+    fun convertKgToPounds(kg: Double): Double {
+        return kg * 2.20462262185
+    }
+
 }
